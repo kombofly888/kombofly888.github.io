@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="kuangyi">
+    
+    <title>
+        
+            Markdown |
+        
+        阿章的自习空间
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"持之以恒，水滴石穿."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                阿章的自习空间
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Markdown</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">kuangyi</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-06-04 22:07:29
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/markdown/">markdown</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>自己整理的关于Markdown的快速入门手册。Markdown是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 使用Markdown编写的文档可以轻松地导出为HTML、Word、图像、PDF、等多种格式的文档。Markdown编辑器：Typora。</p>
+<hr>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><ul>
+<li><a href="#%E6%A0%87%E9%A2%98">标题</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8">引用</a></li>
+<li><a href="#%E5%BA%8F%E5%88%97%E8%A1%A8">序列表</a><ul>
+<li><a href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8">有序列表</a></li>
+<li><a href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8">无序列表</a></li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8">任务列表</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E5%9D%97">代码块</a></li>
+<li><a href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a></li>
+<li><a href="#%E8%A1%A8%E6%A0%BC">表格</a></li>
+<li><a href="#%E8%84%9A%E6%B3%A8">脚注</a></li>
+<li><a href="#%E5%88%86%E5%89%B2%E7%BA%BF">分割线</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5">超链接</a></li>
+</ul>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 标题1</span><br><span class="line">## 标题2</span><br><span class="line">### 标题3</span><br><span class="line">#### 标题4</span><br><span class="line">##### 标题5</span><br><span class="line">###### 标题6</span><br></pre></td></tr></table></figure>
+
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 方法： &gt; + 引用内容 </span><br><span class="line">&gt; 这是一段引用</span><br><span class="line">&gt;&gt; 第二段引用</span><br><span class="line">&gt;&gt;&gt; 第三段哈哈</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<blockquote>
+<p>这是一段引用</p>
+<blockquote>
+<p>第二段引用</p>
+<blockquote>
+<p>第三段哈哈</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 id="序列表"><a href="#序列表" class="headerlink" title="序列表"></a>序列表</h1><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//方法： 数字 + ‘.’ + 内容</span><br><span class="line">1.打开冰箱</span><br><span class="line">2.把大象塞进去</span><br><span class="line">3.关上冰箱</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ol>
+<li>打开冰箱</li>
+<li>把大象塞进去</li>
+<li>关上冰箱</li>
+</ol>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//方法： ‘-’ + 内容</span><br><span class="line">- 语文课</span><br><span class="line">- 英语课</span><br><span class="line">- 数学课</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ul>
+<li>语文课</li>
+<li>英语课</li>
+<li>数学课</li>
+</ul>
+<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//方法： ‘- [ ]’ + 内容</span><br><span class="line">//      &#x27;- [x]&#x27; + 内容</span><br><span class="line">- [ ] 跑步</span><br><span class="line">- [ ] 游泳</span><br><span class="line">- [x] 健身</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 跑步</li>
+<li><input disabled="" type="checkbox"> 游泳</li>
+<li><input checked="" disabled="" type="checkbox"> 健身</li>
+</ul>
+<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//方法： ``` + java</span><br><span class="line">   int i=0;</span><br></pre></td></tr></table></figure>
+<p><strong>效果：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//方法： $$ + latex数学公式 + $$</span><br><span class="line">$$</span><br><span class="line">\frac&#123;\partial f&#125;&#123;\partial x&#125; = 2\sqrt&#123;a&#125;x</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><strong>效果：</strong><br>$$<br>\frac{\partial f}{\partial x} = 2\sqrt{a}x<br>$$</p>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//方法: 表头 + 对齐方式</span><br><span class="line">		左冒号：左边对齐</span><br><span class="line">		右冒号：右边对其</span><br><span class="line">		两边冒号：中间对齐</span><br><span class="line">|姓名|年龄|成绩|</span><br><span class="line">|:---|---:|:---:|</span><br><span class="line">|Bob|23|60|</span><br><span class="line">|Alice|19|99|</span><br></pre></td></tr></table></figure>
+<p><strong>效果：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">姓名</th>
+<th align="right">年龄</th>
+<th align="center">成绩</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Bob</td>
+<td align="right">23</td>
+<td align="center">60</td>
+</tr>
+<tr>
+<td align="left">Alice</td>
+<td align="right">19</td>
+<td align="center">99</td>
+</tr>
+</tbody></table>
+<h1 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//方法： xxx[^脚注名]</span><br><span class="line">		[^脚注名]解释</span><br><span class="line">这是脚注[^1]</span><br><span class="line">[^1]：这是脚注啦</span><br></pre></td></tr></table></figure>
+<p><strong>效果：</strong><br>这是脚注[^1]<br>[^1]：这是脚注啦</p>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//方法： ‘---’</span><br><span class="line">横线上</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">横线下</span><br></pre></td></tr></table></figure>
+<p><strong>效果:</strong></p>
+<p>横线上</p>
+<hr>
+<p>横线下</p>
+<h1 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//方法: [名字](网址&quot;简介&quot;)</span><br><span class="line">[百度](baidu.com&quot;搜索引擎&quot;)</span><br></pre></td></tr></table></figure>
+<p><strong>效果：</strong><br><a href="baidu.com%22%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%22">百度</a></p>
+<h2 id="引用链接"><a href="#引用链接" class="headerlink" title="引用链接"></a>引用链接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//方法：1.重复引用外部链接</span><br><span class="line">		 [名字][id]</span><br><span class="line">		 [id]: 网站&quot;注释&quot;</span><br><span class="line">	   2.引用当前页链接</span><br><span class="line">	     [名字](#对应标题)</span><br></pre></td></tr></table></figure>
+<p><strong>效果：</strong><br>[百度][id]<br>[id]:baidu.com<br>请参考<a href="#%E5%88%86%E7%B1%BB">分类</a></p>
+<h1 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//方法：！[名字](链接&quot;注释&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="字体格式"><a href="#字体格式" class="headerlink" title="字体格式"></a>字体格式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//方法：*斜体*</span><br><span class="line">	   **加粗**</span><br><span class="line">	   `行内代码`</span><br><span class="line">	   &lt;u&gt;下划线&lt;/u&gt;</span><br><span class="line">	   ：表情</span><br><span class="line">	   $行内数学公式$</span><br><span class="line">	   ~下标~</span><br><span class="line">	   ^上标^</span><br><span class="line">	   ==高亮==</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>效果：</strong><br><em>强调</em><br><strong>加粗</strong><br><code>printf()</code><br><u>下划线</u><br>:face-affection:<br>$\theta=x^2$<br>H<del>2</del>O<br>X^2^<br>高亮==高亮==高亮</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><div class="video">
+<iframe src="//player.bilibili.com/player.html?aid=327623069&bvid=BV1JA411h7Gw&cid=171385214&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" > </iframe>
+</div>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/06/04/ww/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Java数据结构 堆</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">kuangyi</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
