@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="kuangyi">
+    
+    <title>
+        
+            哈希表（hashtable） |
+        
+        阿章的自习空间
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"持之以恒，水滴石穿."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                阿章的自习空间
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">哈希表（hashtable）</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">kuangyi</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-06-16 00:33:51
+    </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>散列表（Hash table, 也叫哈希表）</p>
+<hr>
+<h1 id="HashMap用法"><a href="#HashMap用法" class="headerlink" title="HashMap用法"></a>HashMap用法</h1><h2 id="1-构造方法"><a href="#1-构造方法" class="headerlink" title="1. 构造方法"></a>1. 构造方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HashMap();<span class="comment">//默认构造函数，初始容量为 16，最大填充因子 0.75</span></span><br><span class="line">HashMap(<span class="keyword">int</span> initialcapacity);</span><br><span class="line">HashMap(<span class="keyword">int</span> initialcapacity, <span class="keyword">float</span> loadFactor);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-主要方法"><a href="#2-主要方法" class="headerlink" title="2. 主要方法"></a>2. 主要方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>boolean contains(Object value)</code></td>
+<td>确定哈希表内是否包含了给定对象</td>
+</tr>
+<tr>
+<td><code>boolean containsKey(Object key)</code></td>
+<td>确定哈希表内是否包含了给的的关键词</td>
+</tr>
+<tr>
+<td><code>boolean isEmpty()</code></td>
+<td>确定哈希表是否为空</td>
+</tr>
+<tr>
+<td><code>Object get(Object key)</code></td>
+<td>获取对应关键字的对象</td>
+</tr>
+<tr>
+<td><code>Object put(Object key, Object value)</code></td>
+<td>用给定的关键字把对象保存到哈希表中</td>
+</tr>
+<tr>
+<td><code>Object remove(Object key)</code></td>
+<td>从哈希表中删除与给定关键字相对应的对象</td>
+</tr>
+<tr>
+<td><code>void resize()</code></td>
+<td>扩容</td>
+</tr>
+</tbody></table>
+<h2 id="3-知识点"><a href="#3-知识点" class="headerlink" title="3. 知识点"></a>3. 知识点</h2><blockquote>
+<p>当程序试图将一个<code>key-value</code>对放入<code>HashMap</code>中时，程序首先根据该 <code>key </code>的 <code>hashCode() </code>返回值决定该 <code>Entry</code> 的存储位置：如果两个 <code>Entry</code> 的 <code>key</code>的 <code>hashCode()</code> 返回值相同，那它们的存储位置相同。如果这两个 <code>Entry</code>的 <code>key</code> 通过 <code>equals</code> 比较返回 <code>true</code>，新添加 <code>Entry</code> 的 <code>value</code> 将覆盖集合中原有 <code>Entry</code> 的 <code>value</code>，但<code>key</code>不会覆盖。如果这两个 <code>Entry</code> 的 <code>key</code> 通过 <code>equals比较</code>返回 <code>false</code>，新添加的 <code>Entry</code> 将与集合中原有 <code>Entry</code> 形成 <code>Entry链</code>，而且新添加的 <code>Entry</code> 位于 <code>Entry 链</code>的头部</p>
+</blockquote>
+<blockquote>
+<p>从 <code>HashMap</code> 中 get 元素时，首先计算 <code>key</code> 的 <code>hashCode</code>，找到数组中对应位置的某一元素，然后通过 <code>key</code> 的 <code>equals</code> 方法在对应位置的链表中找到需要的元素。</p>
+</blockquote>
+<blockquote>
+<p>当 <code>HashMap</code> 中的元素个数超过数组大小 <code>*loadFactor</code>时，就会进行数组扩容，loadFactor的默认值为 0.75，这是一个折中的取值。也就是说，默认情况下，数组大小为 16，那么当 HashMap 中元素个数超过 <code>16*0.75=12</code> 的时候，就把数组的大小扩展为 <code>2*16=32</code>，即扩大一倍，然后重新计算每个元素在数组中的位置，而这是一个非常消耗性能的操作，所以如果我们已经预知 HashMap 中元素的个数，那么预设元素的个数能够有效的提高 HashMap 的性能。</p>
+</blockquote>
+<h2 id="HashMap-的-遍历"><a href="#HashMap-的-遍历" class="headerlink" title="HashMap 的 遍历"></a>HashMap 的 遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　Map map = <span class="keyword">new</span> HashMap();</span><br><span class="line">　　Iterator iter = map.entrySet().iterator();</span><br><span class="line">　　<span class="keyword">while</span> (iter.hasNext()) &#123;</span><br><span class="line">　　Map.Entry entry = (Map.Entry) iter.next();</span><br><span class="line">　　Object key = entry.getKey();</span><br><span class="line">　　Object val = entry.getValue();</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/java-collection/hashmap.html" >HashMap的原理实现<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/java-collection/hashset.html" >HashSet的原理实现<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><h2 id="1-leetcode1-Two-Sum-Easy"><a href="#1-leetcode1-Two-Sum-Easy" class="headerlink" title="1. leetcode1: Two Sum(Easy)"></a>1. <a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/two-sum/" >leetcode1: Two Sum(Easy)<i class="fas fa-external-link-alt"></i></a></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(target - nums[i]))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;i,hash.get(target - nums[i])&#125;;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                hash.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-leetcode217-Contains-Duplicate-Easy"><a href="#2-leetcode217-Contains-Duplicate-Easy" class="headerlink" title="2. leetcode217: Contains Duplicate(Easy)"></a>2. <a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate/" >leetcode217: Contains Duplicate(Easy)<i class="fas fa-external-link-alt"></i></a></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(nums[i]))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                hash.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/06/06/Sorting-in-Linear-Time/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Sorting in Linear Time</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">kuangyi</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
