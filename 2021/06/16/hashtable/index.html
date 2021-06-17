@@ -169,32 +169,40 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>boolean contains(Object value)</code></td>
+<td>boolean contains(Object value)</td>
 <td>确定哈希表内是否包含了给定对象</td>
 </tr>
 <tr>
-<td><code>boolean containsKey(Object key)</code></td>
-<td>确定哈希表内是否包含了给的的关键词</td>
+<td>boolean containsKey(Object key)</td>
+<td>确定哈希表内是否包含了给定的关键词</td>
 </tr>
 <tr>
-<td><code>boolean isEmpty()</code></td>
+<td>boolean isEmpty()</td>
 <td>确定哈希表是否为空</td>
 </tr>
 <tr>
-<td><code>Object get(Object key)</code></td>
+<td>Object get(Object key)</td>
 <td>获取对应关键字的对象</td>
 </tr>
 <tr>
-<td><code>Object put(Object key, Object value)</code></td>
+<td>Object put(Object key, Object value)</td>
 <td>用给定的关键字把对象保存到哈希表中</td>
 </tr>
 <tr>
-<td><code>Object remove(Object key)</code></td>
+<td>Object remove(Object key)</td>
 <td>从哈希表中删除与给定关键字相对应的对象</td>
 </tr>
 <tr>
-<td><code>void resize()</code></td>
+<td>Void resize()</td>
 <td>扩容</td>
+</tr>
+<tr>
+<td>getOrDefault(Object key, n)</td>
+<td></td>
+</tr>
+<tr>
+<td>Object keySet()</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id="3-知识点"><a href="#3-知识点" class="headerlink" title="3. 知识点"></a>3. 知识点</h2><blockquote>
@@ -206,11 +214,44 @@
 <blockquote>
 <p>当 <code>HashMap</code> 中的元素个数超过数组大小 <code>*loadFactor</code>时，就会进行数组扩容，loadFactor的默认值为 0.75，这是一个折中的取值。也就是说，默认情况下，数组大小为 16，那么当 HashMap 中元素个数超过 <code>16*0.75=12</code> 的时候，就把数组的大小扩展为 <code>2*16=32</code>，即扩大一倍，然后重新计算每个元素在数组中的位置，而这是一个非常消耗性能的操作，所以如果我们已经预知 HashMap 中元素的个数，那么预设元素的个数能够有效的提高 HashMap 的性能。</p>
 </blockquote>
+<blockquote>
+<p>Map 中不允许重复的键</p>
+</blockquote>
 <h2 id="HashMap-的-遍历"><a href="#HashMap-的-遍历" class="headerlink" title="HashMap 的 遍历"></a>HashMap 的 遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　　Map map = <span class="keyword">new</span> HashMap();</span><br><span class="line">　　Iterator iter = map.entrySet().iterator();</span><br><span class="line">　　<span class="keyword">while</span> (iter.hasNext()) &#123;</span><br><span class="line">　　Map.Entry entry = (Map.Entry) iter.next();</span><br><span class="line">　　Object key = entry.getKey();</span><br><span class="line">　　Object val = entry.getValue();</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h1 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<h1 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h1><h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HashSet();<span class="comment">//默认构造函数，初始容量为 16，最大填充因子 0.75</span></span><br><span class="line">HashSet(<span class="keyword">int</span> initialcapacity);</span><br><span class="line">HashSet(<span class="keyword">int</span> initialcapacity, <span class="keyword">float</span> loadFactor);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="主要方法"><a href="#主要方法" class="headerlink" title="主要方法"></a>主要方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Boolean add(Object key)</td>
+<td>确定是否存在指定关键词，存在为False，不存在为True</td>
+</tr>
+<tr>
+<td>Boolean contains(Object key)</td>
+<td>判断是否包含指定key</td>
+</tr>
+<tr>
+<td>Boolean remove(Object o)</td>
+<td>指定元素存在于此set中，则将其移除. 如果此set已包含该元素，则返回true</td>
+</tr>
+</tbody></table>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><blockquote>
+<p>Hashset中元素不重复, 不允许集合中有重复的值</p>
+</blockquote>
+<blockquote>
+<p><code>public boolean add(Object o)</code>方法用来在 Set 中添加元素，当元素值重复时则会立即返回 false，如果成功添加的话会返回 true。</p>
+</blockquote>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
 <li><a class="link"   target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/java-collection/hashmap.html" >HashMap的原理实现<i class="fas fa-external-link-alt"></i></a></li>
 <li><a class="link"   target="_blank" rel="noopener" href="https://wiki.jikexueyuan.com/project/java-collection/hashset.html" >HashSet的原理实现<i class="fas fa-external-link-alt"></i></a></li>
 </ul>
@@ -218,7 +259,22 @@
 
 
 
-<h2 id="2-leetcode217-Contains-Duplicate-Easy"><a href="#2-leetcode217-Contains-Duplicate-Easy" class="headerlink" title="2. leetcode217: Contains Duplicate(Easy)"></a>2. <a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate/" >leetcode217: Contains Duplicate(Easy)<i class="fas fa-external-link-alt"></i></a></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(nums[i]))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                hash.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-leetcode217-Contains-Duplicate-Easy"><a href="#2-leetcode217-Contains-Duplicate-Easy" class="headerlink" title="2. leetcode217: Contains Duplicate(Easy)"></a>2. <a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate/" >leetcode217: Contains Duplicate(Easy)<i class="fas fa-external-link-alt"></i></a></h2><blockquote>
+<p>HashMap</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(nums[i]))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                hash.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>HashSet（推荐）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">containsDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(idx&lt;nums.length)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!set.add(nums[idx]))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            idx++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-leetcode594-longest-Harmonious-Subsequence"><a href="#3-leetcode594-longest-Harmonious-Subsequence" class="headerlink" title="3.leetcode594: longest Harmonious Subsequence"></a>3.<a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-harmonious-subsequence/" >leetcode594: longest Harmonious Subsequence<i class="fas fa-external-link-alt"></i></a></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findLHS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash.get(n)==<span class="keyword">null</span>)</span><br><span class="line">                hash.put(n, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                hash.put(n, hash.get(n)+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(n) &amp;&amp; hash.containsKey(n+<span class="number">1</span>))</span><br><span class="line">                longest = Math.max(longest,hash.get(n)+hash.get(n+<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>  longest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>进阶版</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//著作权归https://pdai.tech所有。</span></span><br><span class="line"><span class="comment">//链接：https://pdai.tech/md/algorithm/alg-basic-hashtable.html</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findLHS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; countForNum = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">        countForNum.put(num, countForNum.getOrDefault(num, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> longest = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> num : countForNum.keySet()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (countForNum.containsKey(num + <span class="number">1</span>)) &#123;</span><br><span class="line">            longest = Math.max(longest, countForNum.get(num + <span class="number">1</span>) + countForNum.get(num));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> longest;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         </div>
