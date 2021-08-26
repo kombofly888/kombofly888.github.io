@@ -9,7 +9,7 @@
     
     <title>
         
-            Archive |
+            Servlet |
         
         阿章的自习空间
     </title>
@@ -428,94 +428,159 @@ $logo-image-box-width = 46px;
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        $archive-year-font-size = 1.8rem;
-$archive-year-count-font-size = 1.2rem;
-$article-title-font-size = 1.2rem;
-$article-date-font-size = 1rem;
+    <div class="article-content-container">
 
-.archive-list-container {
+        <div class="article-title">
+            <span class="title-hover-animation">Servlet</span>
+        </div>
 
-  .archive-item {
-    margin-bottom: $component-spacing-value;
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">kuangyi</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        .article-meta-info {
+  font-size: 0.8rem;
+  color: var(--third-text-color);
+
+  .article-meta-item {
+    margin-right: 10px;
 
     &:last-child {
-      margin-bottom: 0;
+      margin-right: 0;
+    }
+  }
+
+
+  .article-tags, .article-categories {
+    display: inline;
+
+    ul, li {
+      display: inline;
     }
 
-    .archive-item-header {
-      margin-bottom: 10px;
+    a {
+      color: var(--third-text-color);
 
-      .archive-year {
-        font-size: $archive-year-font-size;
-
-        +keep-tablet() {
-          font-size: $archive-year-font-size - 0.2rem;
-        }
-
-        color: var(--second-text-color);
-        font-weight: 600;
-        margin-right: 6px;
-      }
-
-
-      .archive-year-post-count {
-        font-size: $archive-year-count-font-size;
-        font-weight: 500;
-        color: var(--second-text-color);
-
-        +keep-tablet() {
-          font-size: $archive-year-count-font-size * 0.9;
-        }
-      }
-
-    }
-
-
-    .article-list {
-
-      padding-left: 10px;
-
-      +keep-tablet() {
-        padding-left: 0;
-      }
-
-      .article-item {
-        font-size: 1rem;
-        margin-top: 18px;
-
-        +keep-tablet() {
-          margin-top: 16px;
-        }
-
-        +keep-mobile() {
-          margin-top: 14px;
-        }
-
-        &:hover {
-          a.article-title, .article-date {
-            color: var(--primary-color);
-          }
-        }
-
-
-        a.article-title {
-          color: var(--default-text-color);
-        }
-
-        .article-date {
-          font-size: $article-date-font-size;
-          float: right;
-        }
+      &:hover {
+        color: var(--primary-color);
       }
     }
   }
+
+
+  .article-wordcount, .article-tags {
+    +keep-mobile() {
+      display: none;
+    }
+  }
+
+  .article-min2read, .article-categories {
+
+    +keep-tablet() {
+      display: none;
+    }
+
+  }
 }
 
+                    </div>
+                </div>
+            </div>
+        
 
+        <div class="article-content markdown-body">
+            <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><hr>
+<h1 id="1-0-Servlet"><a href="#1-0-Servlet" class="headerlink" title="1.0 Servlet"></a>1.0 Servlet</h1><h2 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h2><ul>
+<li>Servlet就是sun公司开发动态web的一门技术</li>
+<li>sun在这些API中提供一个接口叫做：Servlet。如果想要开发一个servlet程序，只需要完成两个小步骤：<ul>
+<li>编写一个类，实现Servlet接口</li>
+<li>把开发好的Java类部署到web服务器中</li>
+</ul>
+</li>
+<li>把实现了Servlet接口的Java程序叫做，Servlet</li>
+</ul>
+<h2 id="1-2-HelloServlet"><a href="#1-2-HelloServlet" class="headerlink" title="1.2 HelloServlet"></a>1.2 HelloServlet</h2><p>Servlet 接口在Sun公司有两个默认的实现类：HttpServlet、GenericServlet</p>
+<ol>
+<li><p>构建一个普通的Maven项目，删掉里面的src目录，以后我们的学习就在这个项目里面建立Model，这个空的工程就是Maven主工程</p>
+<p>子项目会继承父项目：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javaweb-02-servlet<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.zky<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>环境优化</p>
+<p>web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee</span></span></span><br><span class="line"><span class="string"><span class="tag">            http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">&quot;4.0&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">metadata-complete</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>编写实现类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//由于get或者post只是请求实现的不同方式，可以相互调用，业务逻辑都一样</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        PrintWriter writer = resp.getWriter(); <span class="comment">//响应流</span></span><br><span class="line"></span><br><span class="line">        writer.print(<span class="string">&quot;Hello,Servlet&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>编写Servlet的映射</p>
+<p>我们写的是JAVA程序，但是要通过浏览器访问，而浏览器需要连接web服务器，所以我们需要在web服务中注册我们写的servlet。还需要给他一个能够访问路径的浏览器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--注册Servlet--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.zky.servlet.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--Servlet的请求路径--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>配置Tomcat - 推荐9.0版本 </p>
+<p>注意：配置项目发布的路继就可以了</p>
+<p><img src="Servlet.assets/image-20210811010828208.png" alt="image-20210811010828208"></p>
+<p><img src="Servlet.assets/image-20210811010902746.png" alt="image-20210811010902746"></p>
+</li>
+</ol>
+<p><img src="Servlet.assets/image-20210811010932204.png" alt="image-20210811010932204"></p>
+<ol start="6">
+<li>启动</li>
+</ol>
+<h1 id="2-Servlet原理"><a href="#2-Servlet原理" class="headerlink" title="2. Servlet原理"></a>2. Servlet原理</h1><p>浏览器 -&gt; Web容器 -&gt; </p>
+<h1 id="3-Mapping问题"><a href="#3-Mapping问题" class="headerlink" title="3. Mapping问题"></a>3. Mapping问题</h1><ol>
+<li></li>
+</ol>
 
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/08/13/HTML/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">HTML</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/10/SpringMVC/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">SpringMVC</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
+
 
                 
             </div>
@@ -556,6 +621,62 @@ $article-date-font-size = 1rem;
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            $li-border-radius = 5px;
+$li-margin-bottom = 12px;
+
+.post-tools-container {
+
+  .tools-list {
+
+    li {
+      cursor: pointer;
+      width: $post-tool-button-width;
+      height: $post-tool-button-width;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $li-margin-bottom;
+      background: var(--background-color);
+      color: var(--default-text-color);
+
+      i {
+        color: var(--default-text-color);
+      }
+
+      &:hover {
+        background: var(--primary-color);
+        color: var(--background-color);
+
+        i {
+          color: var(--background-color);
+        }
+      }
+
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+      hover-style(true, 1.06, 1.06);
+
+      &.page-aside-toggle {
+        display: none;
+
+        +keep-tablet() {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+}
+
+        </div>
     
 
     <div class="right-bottom-side-tools">

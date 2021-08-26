@@ -9,7 +9,7 @@
     
     <title>
         
-            Archive |
+            HTML |
         
         阿章的自习空间
     </title>
@@ -428,94 +428,133 @@ $logo-image-box-width = 46px;
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        $archive-year-font-size = 1.8rem;
-$archive-year-count-font-size = 1.2rem;
-$article-title-font-size = 1.2rem;
-$article-date-font-size = 1rem;
+    <div class="article-content-container">
 
-.archive-list-container {
+        <div class="article-title">
+            <span class="title-hover-animation">HTML</span>
+        </div>
 
-  .archive-item {
-    margin-bottom: $component-spacing-value;
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">kuangyi</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        .article-meta-info {
+  font-size: 0.8rem;
+  color: var(--third-text-color);
+
+  .article-meta-item {
+    margin-right: 10px;
 
     &:last-child {
-      margin-bottom: 0;
+      margin-right: 0;
+    }
+  }
+
+
+  .article-tags, .article-categories {
+    display: inline;
+
+    ul, li {
+      display: inline;
     }
 
-    .archive-item-header {
-      margin-bottom: 10px;
+    a {
+      color: var(--third-text-color);
 
-      .archive-year {
-        font-size: $archive-year-font-size;
-
-        +keep-tablet() {
-          font-size: $archive-year-font-size - 0.2rem;
-        }
-
-        color: var(--second-text-color);
-        font-weight: 600;
-        margin-right: 6px;
-      }
-
-
-      .archive-year-post-count {
-        font-size: $archive-year-count-font-size;
-        font-weight: 500;
-        color: var(--second-text-color);
-
-        +keep-tablet() {
-          font-size: $archive-year-count-font-size * 0.9;
-        }
-      }
-
-    }
-
-
-    .article-list {
-
-      padding-left: 10px;
-
-      +keep-tablet() {
-        padding-left: 0;
-      }
-
-      .article-item {
-        font-size: 1rem;
-        margin-top: 18px;
-
-        +keep-tablet() {
-          margin-top: 16px;
-        }
-
-        +keep-mobile() {
-          margin-top: 14px;
-        }
-
-        &:hover {
-          a.article-title, .article-date {
-            color: var(--primary-color);
-          }
-        }
-
-
-        a.article-title {
-          color: var(--default-text-color);
-        }
-
-        .article-date {
-          font-size: $article-date-font-size;
-          float: right;
-        }
+      &:hover {
+        color: var(--primary-color);
       }
     }
   }
+
+
+  .article-wordcount, .article-tags {
+    +keep-mobile() {
+      display: none;
+    }
+  }
+
+  .article-min2read, .article-categories {
+
+    +keep-tablet() {
+      display: none;
+    }
+
+  }
 }
 
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><hr>
+<h1 id="1-HTML"><a href="#1-HTML" class="headerlink" title="1. HTML"></a>1. HTML</h1><p>Hyper Text Markup Language</p>
+<p><strong>初始页面：</strong></p>
+<ul>
+<li>!DOCTYPE :告诉浏览器，我们要是有的规范</li>
+<li>head：head标签代表网页头部</li>
+<li>meta：描述性标签，用来描述我们网站的一些信息</li>
+<li>body：body标签代表网页主题</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/08/14/SpringBoot/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">SpringBoot</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/10/Servlet/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Servlet</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
+
 
                 
             </div>
@@ -556,6 +595,62 @@ $article-date-font-size = 1rem;
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            $li-border-radius = 5px;
+$li-margin-bottom = 12px;
+
+.post-tools-container {
+
+  .tools-list {
+
+    li {
+      cursor: pointer;
+      width: $post-tool-button-width;
+      height: $post-tool-button-width;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $li-margin-bottom;
+      background: var(--background-color);
+      color: var(--default-text-color);
+
+      i {
+        color: var(--default-text-color);
+      }
+
+      &:hover {
+        background: var(--primary-color);
+        color: var(--background-color);
+
+        i {
+          color: var(--background-color);
+        }
+      }
+
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+
+      hover-style(true, 1.06, 1.06);
+
+      &.page-aside-toggle {
+        display: none;
+
+        +keep-tablet() {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+}
+
+        </div>
     
 
     <div class="right-bottom-side-tools">

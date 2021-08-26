@@ -9,8 +9,6 @@
     
     <title>
         
-            Archive |
-        
         阿章的自习空间
     </title>
     
@@ -427,95 +425,152 @@ $logo-image-box-width = 46px;
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        $archive-year-font-size = 1.8rem;
-$archive-year-count-font-size = 1.2rem;
-$article-title-font-size = 1.2rem;
-$article-date-font-size = 1rem;
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
 
-.archive-list-container {
+                
 
-  .archive-item {
-    margin-bottom: $component-spacing-value;
+                <h3 class="home-article-title">
+                    <a href="/2021/06/05/linked-list/">
+                        linked list
+                    </a>
+                </h3>
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+                <div class="home-article-content markdown-body">
+                    
+                        Linked list 
 
-    .archive-item-header {
-      margin-bottom: 10px;
+知识点
+链表的定义具有递归的性质，因此链表题目常可以用递归的方法求解。
+当链表的头节点 head 有可能需要被删除，可创建哑节点 dummyHead，令 dummyHead.next = head
 
-      .archive-year {
-        font-size: $archive-year-font-size;
+习题1. 203.移除...
+                    
+                </div>
 
-        +keep-tablet() {
-          font-size: $archive-year-font-size - 0.2rem;
-        }
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jun 05 2021 04:59:59 GMT-0400">2021-06-05</span></span>
+        
+        
+    </div>
 
-        color: var(--second-text-color);
-        font-weight: 600;
-        margin-right: 6px;
-      }
+    <a href="/2021/06/05/linked-list/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
+            </li>
+        
+            <li class="home-article-item">
 
-      .archive-year-post-count {
-        font-size: $archive-year-count-font-size;
-        font-weight: 500;
-        color: var(--second-text-color);
+                
 
-        +keep-tablet() {
-          font-size: $archive-year-count-font-size * 0.9;
-        }
-      }
+                <h3 class="home-article-title">
+                    <a href="/2021/06/04/Markdown/">
+                        Markdown
+                    </a>
+                </h3>
 
-    }
+                <div class="home-article-content markdown-body">
+                    
+                        自己整理的关于Markdown的快速入门手册。Markdown是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 使用Markdown编写的文档可以轻松地导出为HTML、Word、图像、PDF、等多种格式的文档。Markdown编辑器...
+                    
+                </div>
 
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jun 04 2021 22:07:29 GMT-0400">2021-06-04</span></span>
+        
+        
+    </div>
 
-    .article-list {
+    <a href="/2021/06/04/Markdown/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-      padding-left: 10px;
+            </li>
+        
+            <li class="home-article-item">
 
-      +keep-tablet() {
-        padding-left: 0;
-      }
+                
 
-      .article-item {
-        font-size: 1rem;
-        margin-top: 18px;
+                <h3 class="home-article-title">
+                    <a href="/2021/06/04/ww/">
+                        Java数据结构 堆
+                    </a>
+                </h3>
 
-        +keep-tablet() {
-          margin-top: 16px;
-        }
+                <div class="home-article-content markdown-body">
+                    
+                        :smile: 这篇文章总结了我自学 堆 的全部过程，我将记录基础概念，知识点和例题。
 
-        +keep-mobile() {
-          margin-top: 14px;
-        }
+堆排序介绍
+父结点,PARENT(i):  return[(i-1)/2] 
+左孩子,LEFT(i): return(2*i+1) 
+右孩子,RIGHT(i):...
+                    
+                </div>
 
-        &:hover {
-          a.article-title, .article-date {
-            color: var(--primary-color);
-          }
-        }
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Jun 04 2021 06:12:23 GMT-0400">2021-06-04</span></span>
+        
+        
+    </div>
 
+    <a href="/2021/06/04/ww/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
 
-        a.article-title {
-          color: var(--default-text-color);
-        }
+            </li>
+        
+            <li class="home-article-item">
 
-        .article-date {
-          font-size: $article-date-font-size;
-          float: right;
-        }
-      }
-    }
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2021/06/02/hello-world/">
+                        Hello World
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, yo...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jun 02 2021 11:46:50 GMT-0400">2021-06-02</span></span>
+        
+        
+    </div>
+
+    <a href="/2021/06/02/hello-world/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        .paginator {
+  font-size: 1rem;
+  margin-top: 30px;
+
+  a.prev {
+    float: left;
   }
+
+  a.next {
+    float: right;
+  }
+
 }
-
-
 
     </div>
 </div>
+
 
                 
             </div>
@@ -719,6 +774,7 @@ $tools-item-border-radius = 1px;
     
 
 </main>
+
 
 
 
